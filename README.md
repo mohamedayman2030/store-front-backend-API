@@ -60,6 +60,21 @@ add this line in jasmine.json in spec/support/jasmine.ts in spec_files section i
 ```
 "tests/*[sS]pec.js"
 ```
+then run this command
+```
+npm run test
+```
+to setup the database
+```
+su postgres
+psql postgres
+CREATE USER shopping_user WITH PASSWORD 'password123';
+CREATE DATABASE shopping;
+CREATE DATABASE shopping_test;
+\c shopping
+GRANT ALL PRIVILEGES ON DATABASE shopping TO shopping_user;
+```
+
 
 ## .env variables
 
